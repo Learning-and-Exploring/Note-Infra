@@ -1,8 +1,6 @@
 services:
   app:
-    build:
-      context: ../Prisma
-      dockerfile: Dockerfile
+    image: ghcr.io/oeun-nuphea/note-api:latest  # 👈 changed from build
     container_name: note-api
     command: sh -c "npm run prisma:generate && npm run prisma:deploy && npm run dev"
     environment:

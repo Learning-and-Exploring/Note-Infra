@@ -22,7 +22,7 @@ services:
       - VAPID_PUBLIC_KEY=${VAPID_PUBLIC_KEY}
       - VAPID_PRIVATE_KEY=${VAPID_PRIVATE_KEY}
       - VAPID_CLAIMS=${VAPID_CLAIMS}
-    restart: always
+    # restart: always
     depends_on:
       db:
         condition: service_healthy
@@ -33,7 +33,7 @@ services:
     image: postgres:16-alpine
     container_name: db-postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
